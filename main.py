@@ -27,31 +27,31 @@ def db_settings_parser():
 
 
 def create_publisher(json_publisher: dict):
-    new_publisher = Publisher(**json_publisher.get('fields'))
+    new_publisher = Publisher(id=json_publisher.get('pk'), **json_publisher.get('fields'))
     session.add(new_publisher)
     session.commit()
 
 
 def create_book(json_book: dict):
-    new_book = Book(**json_book.get('fields'))
+    new_book = Book(id=json_book.get('pk'), **json_book.get('fields'))
     session.add(new_book)
     session.commit()
 
 
 def create_shop(json_shop: dict):
-    new_shop = Shop(**json_shop.get('fields'))
+    new_shop = Shop(id=json_shop.get('pk'), **json_shop.get('fields'))
     session.add(new_shop)
     session.commit()
 
 
 def create_stock(json_stock: dict):
-    new_stock = Stock(**json_stock.get('fields'))
+    new_stock = Stock(id=json_stock.get('pk'), **json_stock.get('fields'))
     session.add(new_stock)
     session.commit()
 
 
 def create_sale(json_sale: dict):
-    new_sale = Sale(**json_sale.get('fields'))
+    new_sale = Sale(id=json_sale.get('pk'), **json_sale.get('fields'))
     session.add(new_sale)
     session.commit()
 
